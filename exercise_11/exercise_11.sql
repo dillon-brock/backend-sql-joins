@@ -4,7 +4,7 @@
 -- ORDER in descending order
 -- LIMIT 10
 
-SELECT film.title, count(rental.rental_id) FROM film
+SELECT film.title, count(rental) FROM film
 INNER JOIN inventory ON inventory.film_id = film.film_id
 INNER JOIN rental ON rental.inventory_id = inventory.inventory_id
 GROUP BY film.film_id
